@@ -4,7 +4,11 @@ public class ScrewDriver {
 
     private Header header;
 
-    public ScrewDriver(Header header) {
+//    public ScrewDriver(Header header) {
+//        this.header = header;
+//    }
+
+    public void setHeader(Header header) {
         this.header = header;
     }
 

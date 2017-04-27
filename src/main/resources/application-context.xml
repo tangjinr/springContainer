@@ -7,12 +7,22 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup">
-        <constructor-arg>
-            <!--这里的bean="header"就是下面这个bean id="header"-->
-            <ref bean="header"></ref>
-        </constructor-arg>
+    <!--&lt;!&ndash;通过构造函数依赖注入bean&ndash;&gt;-->
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup">-->
+    <!--<constructor-arg>-->
+    <!--&lt;!&ndash;这里的bean="header"就是下面这个bean id="header"&ndash;&gt;-->
+    <!--<ref bean="header"></ref>-->
+    <!--</constructor-arg>-->
+    <!--</bean>-->
+
+    <!--通过autowire自动注入，autowire根据setter方法自动注入-->
+    <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup"
+          autowire="byName">
     </bean>
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup"-->
+    <!--autowire="byType">-->
+    <!--</bean>-->
+
 
     <bean id="header" class="com.tangz.springcontainer.StraightHeader">
         <!--通过构造函数依赖注入基本类型-->
