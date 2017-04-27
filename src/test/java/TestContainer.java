@@ -29,8 +29,8 @@ public class TestContainer {
 
     @Test
     public void testBean() {
-        // screwDriver.use();
-        System.out.println(header.getInfo());
-        header.doWork();
+        // System.out.println(header.getInfo());
+        // header.doWork();
+        screwDriver.use();
     }
 }

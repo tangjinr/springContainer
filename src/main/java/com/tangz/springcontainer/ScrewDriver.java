@@ -2,14 +2,15 @@ package com.tangz.springcontainer;
 
 public class ScrewDriver {
 
-    private String color = "red";
+    private Header header;
 
-    public void use() {
-        System.out.println("Use " + color + " screwdriver");
+    public ScrewDriver(Header header) {
+        this.header = header;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void use() {
+        System.out.println("Use header" + header.getInfo());
+        header.doWork();
     }
 
     public void init() {
