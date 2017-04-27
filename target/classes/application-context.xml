@@ -7,60 +7,82 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup">
-        <constructor-arg>
-            <!--这里的bean="header"就是下面这个bean id="header"-->
-            <ref bean="header"></ref>
-        </constructor-arg>
+    <!--通过构造函数依赖注入bean-->
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup">-->
+    <!--<constructor-arg>-->
+    <!--&lt;!&ndash;这里的bean="header"就是下面这个bean id="header"&ndash;&gt;-->
+    <!--<ref bean="header"></ref>-->
+    <!--</constructor-arg>-->
+    <!--</bean>-->
+
+    <!--通过autowire自动注入，autowire根据setter方法自动注入-->
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup"-->
+    <!--autowire="byName">-->
+    <!--</bean>-->
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup"-->
+    <!--autowire="byType">-->
+    <!--</bean>-->
+
+    <!--通过Annotation依赖注入，ScrewDriver类里面通过@Autowired或者@Resource获取 "header" bean-->
+    <!--<bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver" init-method="init" destroy-method="cleanup">-->
+    <!--</bean>-->
+
+    <!--通过Annotation依赖注入，ScrewDriver类里面通过@Autowired或者@Resource获取 "header" bean
+    同时采用@PostConstruct和@PreDestory替代init-method和destroy-method-->
+    <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver">
     </bean>
 
-    <bean id="header" class="com.tangz.springcontainer.StraightHeader">
-        <!--通过构造函数依赖注入基本类型-->
-        <!--<constructor-arg value="red"></constructor-arg>-->
-        <!--<constructor-arg value="15"></constructor-arg>-->
+    <!--通过Annotation依赖注入，定义bean。base-package代表要搜索的包名-->
+    <context:component-scan base-package="com.tangz.springcontainer"/>
 
-        <!--<constructor-arg index="0" value="red"></constructor-arg>-->
-        <!--<constructor-arg index="1" value="15"></constructor-arg>-->
+    <!--通过XML依赖注入-->
+    <!--<bean id="header" class="com.tangz.springcontainer.StraightHeader">-->
+    <!--通过构造函数依赖注入基本类型-->
+    <!--<constructor-arg value="red"></constructor-arg>-->
+    <!--<constructor-arg value="15"></constructor-arg>-->
 
-        <!--<constructor-arg type="java.lang.String" value="red"></constructor-arg>-->
-        <!--<constructor-arg type="int" value="15"></constructor-arg>-->
+    <!--<constructor-arg index="0" value="red"></constructor-arg>-->
+    <!--<constructor-arg index="1" value="15"></constructor-arg>-->
 
-        <!--<constructor-arg name="color" value="red"></constructor-arg>-->
-        <!--<constructor-arg name="size" value="15"></constructor-arg>-->
+    <!--<constructor-arg type="java.lang.String" value="red"></constructor-arg>-->
+    <!--<constructor-arg type="int" value="15"></constructor-arg>-->
 
-        <!--通过构造函数依赖注入map集合类型，一般两个属性不会通过map注入，这里只是作为练习-->
-        <!--<constructor-arg>-->
-        <!--<map>-->
-        <!--<entry key="color" value="red"></entry>-->
-        <!--<entry key="size" value="14"></entry>-->
-        <!--</map>-->
-        <!--</constructor-arg>-->
+    <!--<constructor-arg name="color" value="red"></constructor-arg>-->
+    <!--<constructor-arg name="size" value="15"></constructor-arg>-->
 
-        <!--通过构造函数依赖注入list集合类型-->
-        <!--<constructor-arg>-->
-        <!--<list>-->
-        <!--<value>red</value>-->
-        <!--<value>14</value>-->
-        <!--</list>-->
-        <!--</constructor-arg>-->
+    <!--通过构造函数依赖注入map集合类型，一般两个属性不会通过map注入，这里只是作为练习-->
+    <!--<constructor-arg>-->
+    <!--<map>-->
+    <!--<entry key="color" value="red"></entry>-->
+    <!--<entry key="size" value="14"></entry>-->
+    <!--</map>-->
+    <!--</constructor-arg>-->
 
-        <!--通过构造函数依赖注入Properties类型内容-->
-        <!--<constructor-arg>-->
-        <!--<props>-->
-        <!--<prop key="color">red</prop>-->
-        <!--<prop key="size">14</prop>-->
-        <!--</props>-->
-        <!--</constructor-arg>-->
+    <!--通过构造函数依赖注入list集合类型-->
+    <!--<constructor-arg>-->
+    <!--<list>-->
+    <!--<value>red</value>-->
+    <!--<value>14</value>-->
+    <!--</list>-->
+    <!--</constructor-arg>-->
 
-        <!--通过构造函数依赖注入配置文件内容-->
-        <!--<constructor-arg name="color" value="${color}"></constructor-arg>-->
-        <!--<constructor-arg name="size" value="${size}"></constructor-arg>-->
+    <!--通过构造函数依赖注入Properties类型内容-->
+    <!--<constructor-arg>-->
+    <!--<props>-->
+    <!--<prop key="color">red</prop>-->
+    <!--<prop key="size">14</prop>-->
+    <!--</props>-->
+    <!--</constructor-arg>-->
 
-        <!--通过setter方法依赖注入配置文件内容-->
-        <property name="color" value="${color}"></property>
-        <property name="size" value="${size}"></property>
+    <!--通过构造函数依赖注入配置文件内容-->
+    <!--<constructor-arg name="color" value="${color}"></constructor-arg>-->
+    <!--<constructor-arg name="size" value="${size}"></constructor-arg>-->
 
-    </bean>
+    <!--通过setter方法依赖注入配置文件内容-->
+    <!--<property name="color" value="${color}"></property>-->
+    <!--<property name="size" value="${size}"></property>-->
+
+    <!--</bean>-->
 
     <!--辅助依赖注入配置文件内容-->
     <bean id="headerProperties"
