@@ -10,8 +10,18 @@
     <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver"></bean>
 
     <bean id="header" class="com.tangz.springcontainer.StraightHeader">
-        <constructor-arg value="red"></constructor-arg>
-        <constructor-arg value="15"></constructor-arg>
+        <!--通过构造函数依赖注入基本类型-->
+        <!--<constructor-arg value="red"></constructor-arg>-->
+        <!--<constructor-arg value="15"></constructor-arg>-->
+
+        <!--<constructor-arg index="0" value="red"></constructor-arg>-->
+        <!--<constructor-arg index="1" value="15"></constructor-arg>-->
+
+        <!--<constructor-arg type="java.lang.String" value="red"></constructor-arg>-->
+        <!--<constructor-arg type="int" value="15"></constructor-arg>-->
+
+        <constructor-arg name="color" value="red"></constructor-arg>
+        <constructor-arg name="size" value="15"></constructor-arg>
     </bean>
 
 
