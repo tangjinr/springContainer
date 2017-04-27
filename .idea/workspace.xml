@@ -50,8 +50,8 @@
       <file leaf-file-name="ScrewDriver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tangz/springcontainer/ScrewDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="168">
+              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -1054,7 +1054,7 @@
       <workItem from="1493218719994" duration="485000" />
       <workItem from="1493219684377" duration="1273000" />
       <workItem from="1493259396029" duration="3557000" />
-      <workItem from="1493263074105" duration="548000" />
+      <workItem from="1493263074105" duration="591000" />
     </task>
     <task id="LOCAL-00001" summary="2017-04-27">
       <created>1493261325584</created>
@@ -1070,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493263444297</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2017-04-27">
+      <created>1493263637845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1493263637845</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1100,7 +1107,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12112000" />
+    <option name="totallyTimeSpent" value="12155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1248,6 +1255,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2289">
           <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,8 +1269,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tangz/springcontainer/ScrewDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
