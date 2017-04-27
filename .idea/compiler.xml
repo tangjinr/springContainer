@@ -9,8 +9,8 @@
         <module name="springContainer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="springContainer" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="springContainer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
