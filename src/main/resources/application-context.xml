@@ -53,8 +53,12 @@
         <!--</constructor-arg>-->
 
         <!--通过构造函数依赖注入配置文件内容-->
-        <constructor-arg name="color" value="${color}"></constructor-arg>
-        <constructor-arg name="size" value="${size}"></constructor-arg>
+        <!--<constructor-arg name="color" value="${color}"></constructor-arg>-->
+        <!--<constructor-arg name="size" value="${size}"></constructor-arg>-->
+
+        <!--通过setter方法依赖注入配置文件内容-->
+        <property name="color" value="${color}"></property>
+        <property name="size" value="${size}"></property>
 
     </bean>
 
