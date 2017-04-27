@@ -10,6 +10,7 @@
     <bean id="screwDriver" class="com.tangz.springcontainer.ScrewDriver"></bean>
 
     <bean id="header" class="com.tangz.springcontainer.StraightHeader">
+        <!--通过构造函数依赖注入基本类型-->
         <!--<constructor-arg value="red"></constructor-arg>-->
         <!--<constructor-arg value="15"></constructor-arg>-->
 
@@ -19,9 +20,43 @@
         <!--<constructor-arg type="java.lang.String" value="red"></constructor-arg>-->
         <!--<constructor-arg type="int" value="15"></constructor-arg>-->
 
-        <constructor-arg name="color" value="red"></constructor-arg>
-        <constructor-arg name="size" value="15"></constructor-arg>
+        <!--<constructor-arg name="color" value="red"></constructor-arg>-->
+        <!--<constructor-arg name="size" value="15"></constructor-arg>-->
+
+        <!--通过构造函数依赖注入map集合类型，一般两个属性不会通过map注入，这里只是作为练习-->
+        <!--<constructor-arg>-->
+        <!--<map>-->
+        <!--<entry key="color" value="red"></entry>-->
+        <!--<entry key="size" value="14"></entry>-->
+        <!--</map>-->
+        <!--</constructor-arg>-->
+
+        <!--通过构造函数依赖注入list集合类型-->
+        <!--<constructor-arg>-->
+        <!--<list>-->
+        <!--<value>red</value>-->
+        <!--<value>14</value>-->
+        <!--</list>-->
+        <!--</constructor-arg>-->
+
+        <!--通过构造函数依赖注入Properties类型内容-->
+        <!--<constructor-arg>-->
+        <!--<props>-->
+        <!--<prop key="color">red</prop>-->
+        <!--<prop key="size">14</prop>-->
+        <!--</props>-->
+        <!--</constructor-arg>-->
+
+        <!--通过构造函数依赖注入配置文件内容-->
+        <constructor-arg name="color" value="${color}"></constructor-arg>
+        <constructor-arg name="size" value="${size}"></constructor-arg>
+
     </bean>
 
+    <!--辅助依赖注入配置文件内容-->
+    <bean id="headerProperties"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:header.properties"/>
+    </bean>
 
 </beans>
